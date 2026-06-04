@@ -1,0 +1,259 @@
+/* Styling cho Hóa đơn thanh toán */
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #006699;
+}
+
+.company-info {
+    flex: 1;
+}
+
+.company-info h1 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    color: #006699;
+}
+
+.company-info p {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #333;
+}
+
+.invoice-title {
+    text-align: right;
+    flex: 1;
+}
+
+.invoice-title h2 {
+    margin: 0 0 15px 0;
+    font-size: 28px;
+    color: #d32f2f;
+    text-decoration: underline;
+}
+
+.invoice-title p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Customer Info */
+.customer-info {
+    margin-bottom: 25px;
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.customer-info h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    color: #006699;
+    text-transform: uppercase;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+}
+
+/* Invoice Items Table */
+.invoice-items {
+    margin-bottom: 20px;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-table thead {
+    background-color: #006699;
+    color: white;
+}
+
+.invoice-table th {
+    padding: 12px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #004d7a;
+}
+
+.invoice-table tbody tr {
+    border: 1px solid #ddd;
+    transition: background-color 0.2s ease;
+}
+
+.invoice-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.invoice-table tbody tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.invoice-table td {
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.invoice-table td:nth-child(2) {
+    text-align: left;
+    font-weight: 500;
+    color: #006699;
+}
+
+.invoice-table td:nth-child(3),
+.invoice-table td:nth-child(4),
+.invoice-table td:nth-child(6) {
+    text-align: right;
+    color: #d32f2f;
+    font-weight: 500;
+}
+
+/* Summary */
+.invoice-summary {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.summary-table {
+    width: 40%;
+    border-collapse: collapse;
+    border: 2px solid #006699;
+}
+
+.summary-table tr {
+    border: 1px solid #ccc;
+}
+
+.summary-table td {
+    padding: 12px 15px;
+    font-size: 14px;
+}
+
+.summary-table .label {
+    text-align: left;
+    background-color: #f5f5f5;
+    font-weight: 600;
+    color: #333;
+}
+
+.summary-table .amount {
+    text-align: right;
+    color: #d32f2f;
+    font-weight: 600;
+}
+
+.summary-table .total-row {
+    background-color: #006699;
+    color: white;
+}
+
+.summary-table .total-row .label,
+.summary-table .total-row .amount {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Notes */
+.invoice-notes {
+    margin-bottom: 30px;
+    background-color: #fff3e0;
+    padding: 15px;
+    border-left: 4px solid #ff9800;
+    border-radius: 3px;
+}
+
+.invoice-notes h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #006699;
+    text-transform: uppercase;
+}
+
+.invoice-notes p {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #333;
+}
+
+/* Footer */
+.invoice-footer {
+    margin-top: 40px;
+    border-top: 2px solid #006699;
+    padding-top: 20px;
+}
+
+.footer-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.footer-table td {
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    border: none;
+}
+
+.footer-table .center {
+    text-align: center;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .invoice-table,
+    .summary-table {
+        page-break-inside: avoid;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .invoice-header {
+        flex-direction: column;
+    }
+
+    .invoice-title {
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .summary-table {
+        width: 100%;
+    }
+
+    .invoice-table th,
+    .invoice-table td {
+        font-size: 12px;
+        padding: 8px 5px;
+    }
+}
